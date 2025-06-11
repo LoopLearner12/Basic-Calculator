@@ -85,9 +85,10 @@ function calculateResult() {
     }
 
     try {
-        // Evaluate the expression using eval(). Be cautious with eval() in production for user inputs.
-        // For a simple calculator, it's generally fine, but for complex apps, consider a custom parser.
-        let result = eval(currentExpression);
+        // Replace displayed operators with JS operators for eval
+        let expression = currentExpression.replace(/×/g, '*').replace(/÷/g, '/').replace(/%/g, '/100*');
+
+        let result = eval(expression);
 
         // Handle division by zero
         if (!isFinite(result)) {
@@ -133,3 +134,16 @@ document.addEventListener('keydown', (event) => {
         clearDisplay();
     }
 });
+
+/**
+ * Deletes the last character from the current expression.
+ */
+function deleteLast() {
+    if (lastActionWasEquals) {
+        clearDisplay();
+        return;
+    }
+    currentExpression = currentExpression.slice(0, -1);
+    display.textContent = currentExpression === '' ? '0' : currentExpression;
+    lastActionWasEquals = false;
+}
