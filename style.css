@@ -1,156 +1,129 @@
-/* Custom styles for the calculator */
 body {
-    font-family: 'Inter', sans-serif; /* Using Inter font as per instructions */
-    background-color: #0d1117; /* Even deeper dark background for stark contrast */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    padding: 1rem; /* Add some padding for smaller screens */
-    box-sizing: border-box;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .calculator {
-    background-color: #161b22; /* Slightly lighter dark background for the calculator body */
-    border-radius: 1.5rem; /* Rounded corners */
-    padding: 1.75rem; /* Consistent padding */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); /* More prominent shadow for depth */
-    max-width: 340px; /* Consistent width */
-    width: 100%; /* Fluid width */
+  background-color: #222;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px #ff9500;
+  width: 320px;
 }
 
 .display {
-    background-color: #21262d; /* Darker display background */
-    color: #c9d1d9; /* Light grey text color for display */
-    font-size: 2.8rem; /* Large font size */
-    padding: 1rem 1.25rem;
-    border-radius: 0.85rem;
-    margin-bottom: 1.25rem;
-    text-align: right;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    min-height: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-weight: 500;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3); /* Inner shadow for display depth */
+  background-color: #000;
+  color: #fff;
+  font-size: 2.5rem;
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  text-align: right;
+  box-shadow: inset 0 0 10px #ff9500;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: 600;
 }
 
 .buttons-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
-    gap: 0.9rem; /* Gap between buttons */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  grid-auto-rows: minmax(60px, auto);
 }
 
 .button {
-    /* Base styles for all buttons, specific colors overridden below */
-    color: #ffffff; /* Default white text for all buttons */
-    font-size: 1.6rem;
-    padding: 1.2rem;
-    border-radius: 0.85rem; /* Ensures all buttons are rounded boxes */
-    cursor: pointer;
-    outline: none;
-    border: none;
-    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Clearer shadow */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    aspect-ratio: 1 / 1; /* Makes all buttons square */
-    font-weight: 500;
+  background-color: #ff9500;
+  color: #000;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px #cc7a00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  user-select: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Number buttons */
+.button:hover {
+  background-color: #ffa733;
+  box-shadow: 0 6px 8px #cc7a00;
+}
+
+.button:active {
+  background-color: #cc7a00;
+  box-shadow: inset 0 4px 6px #995c00;
+}
+
+.button.operator {
+  background-color: #ff9500;
+  color: #000;
+  box-shadow: 0 4px 6px #cc7a00;
+}
+
+.button.operator:hover {
+  background-color: #ffa733;
+}
+
+.button.operator:active {
+  background-color: #cc7a00;
+}
+
 .button:not(.operator):not(.clear):not(.equals) {
-    background-color: #30363d; /* Dark grey for numbers */
+  background-color: #000;
+  border: 2px solid #ff9500;
+  box-shadow: 0 4px 6px #ff9500;
+  color: #fff;
 }
 
 .button:not(.operator):not(.clear):not(.equals):hover {
-    background-color: #444c56; /* Lighter grey on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  background-color: #1a1a1a;
 }
 
 .button:not(.operator):not(.clear):not(.equals):active {
-    background-color: #282e34; /* Darker grey on active */
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #333;
 }
 
-/* Operator buttons (+, -, *, /) */
-.operator {
-    background-color: #58a6ff; /* Vibrant blue for operators */
-}
-
-.operator:hover {
-    background-color: #79c0ff; /* Lighter blue on hover */
-}
-
-.operator:active {
-    background-color: #388bfd; /* Darker blue on active */
-}
-
-/* Clear button (AC) */
-.clear {
-    background-color: #f85149; /* Bright red for clear */
-    grid-column: span 2;
-}
-
-.clear:hover {
-    background-color: #ff7b72; /* Lighter red on hover */
-}
-
-.clear:active {
-    background-color: #cb2431; /* Darker red on active */
-}
-
-/* Equals button (=) */
-.equals {
-    background-color: #56d364; /* Bright green for equals */
-    grid-column: span 2;
-}
-
-.equals:hover {
-    background-color: #7ee787; /* Lighter green on hover */
-}
-
-.equals:active {
-    background-color: #2ea043; /* Darker green on active */
-}
-
-/* Message Box for alerts - unchanged from previous version */
+/* Message Box for alerts */
 .message-box {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    text-align: center;
-    color: #333; /* Ensure text is readable in message box */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  color: #333;
 }
 
 .message-box p {
-    font-size: 1.2rem;
-    color: #333;
+  font-size: 1.2rem;
+  color: #333;
 }
 
 .message-box button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
 }
