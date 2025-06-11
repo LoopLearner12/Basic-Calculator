@@ -1,49 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic Calculator</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Link to your external CSS file -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basic Calculator</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="calculator">
-        <div class="display" id="display">0</div>
-        <div class="buttons-grid">
-            <button class="button clear" onclick="clearDisplay()">AC</button>
-            <button class="button operator" onclick="appendCharacter('/')">/</button>
-            <button class="button operator" onclick="appendCharacter('*')">*</button>
+  <div class="calculator">
+    <div class="display" id="display">0</div>
+    <div class="buttons-grid">
+      <button class="button clear" style="grid-column: span 2;" onclick="deleteLast()">DEL</button>
+      <button class="button clear" style="grid-column: span 2;" onclick="clearDisplay()">AC</button>
+      <button class="button operator" onclick="appendCharacter('+')">+</button>
+      <button class="button operator" onclick="appendCharacter('%')">%</button>
 
-            <button class="button" onclick="appendCharacter('7')">7</button>
-            <button class="button" onclick="appendCharacter('8')">8</button>
-            <button class="button" onclick="appendCharacter('9')">9</button>
-            <button class="button operator" onclick="appendCharacter('-')">-</button>
+      <button class="button operator" onclick="appendCharacter('×')">×</button>
+      <button class="button operator" onclick="appendCharacter('÷')">÷</button>
+      <button class="button" onclick="appendCharacter('8')">8</button>
+      <button class="button" onclick="appendCharacter('9')">9</button>
+      <button class="button" onclick="appendCharacter('7')">7</button>
 
-            <button class="button" onclick="appendCharacter('4')">4</button>
-            <button class="button" onclick="appendCharacter('5')">5</button>
-            <button class="button" onclick="appendCharacter('6')">6</button>
-            <button class="button operator" onclick="appendCharacter('+')">+</button>
+      <button class="button" onclick="appendCharacter('6')">6</button>
+      <button class="button" onclick="appendCharacter('5')">5</button>
+      <button class="button" onclick="appendCharacter('4')">4</button>
 
-            <button class="button" onclick="appendCharacter('1')">1</button>
-            <button class="button" onclick="appendCharacter('2')">2</button>
-            <button class="button" onclick="appendCharacter('3')">3</button>
-            <button class="button" onclick="appendCharacter('.')">.</button>
+      <button class="button" onclick="appendCharacter('3')">3</button>
+      <button class="button" onclick="appendCharacter('2')">2</button>
+      <button class="button" onclick="appendCharacter('1')">1</button>
 
-            <button class="button" onclick="appendCharacter('0')">0</button>
-            <button class="button equals" onclick="calculateResult()">=</button>
-        </div>
+      <button class="button" onclick="appendCharacter('0')">0</button>
+      <button class="button" onclick="appendCharacter('.')">.</button>
+      <button class="button equals" onclick="calculateResult()">=</button>
     </div>
+  </div>
 
-    <!-- Message Box HTML -->
-    <div class="message-box" id="messageBox">
-        <p id="messageText"></p>
-        <button onclick="hideMessageBox()">OK</button>
-    </div>
+  <div class="message-box" id="messageBox">
+    <p id="messageText"></p>
+    <button onclick="hideMessageBox()">OK</button>
+  </div>
 
-    <!-- Link to your external JavaScript file -->
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
