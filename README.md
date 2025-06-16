@@ -77,7 +77,7 @@ With custom popup instead of browser alerts.
 
 ## 👩‍💻 Author
 Ankita Biswal
-B.Tech CSE
+(B.Tech CSE)
 
 ## 📄 License
 This project is licensed under the MIT License.
