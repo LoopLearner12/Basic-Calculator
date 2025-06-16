@@ -75,10 +75,6 @@ With custom popup instead of browser alerts.
 
  Mobile PWA support
 
-## 👩‍💻 Author
-Ankita Biswal
-(B.Tech CSE)
-
 ## 📄 License
 This project is licensed under the MIT License.
 
