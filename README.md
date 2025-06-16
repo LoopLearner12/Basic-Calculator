@@ -9,7 +9,6 @@ A clean, modern, and responsive **Basic Calculator** built with **HTML**, **CSS*
 - ✅ Addition, Subtraction, Multiplication, Division, and Percentage
 - ✅ Real-time display updates
 - ✅ Custom error message box for invalid inputs
-- ✅ `AC` (All Clear) and `DEL` (Delete Last)
 - ✅ Keyboard input support
 - ✅ Responsive and dark-themed UI
 
